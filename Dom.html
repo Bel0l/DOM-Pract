@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changedom()">click</button>
+    <h1 id="para1">This is heading</h1>
+    <img src="https://w3schools.com/w3images/avatar2.png" alt="Avatar" id="img1" width="100" height="100">
+
+    <form id="f1">
+        <label>userName</label> <input type="text" id="username" 
+        name="username">
+        <label>Password</label> <input type="password" id="password"
+        name="Password">
+
+
+        <p style= 'color: yellow' id="pa1" class="para2" onclick="paraFun(this)">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ratione fugit illum pariatur in quis corrupti, aperiam dolorem eligendi. Natus impedit cumque labore ut dolore assumenda quasi molestias alias minima?</p>
+
+        <p style= 'color: yellow' id="pa2" class="para3" onclick="paraFun(this)">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ratione fugit illum pariatur in quis corrupti, aperiam dolorem eligendi. Natus impedit cumque labore ut dolore assumenda quasi molestias alias minima?</p>
+    </form>
+        <script>
+            const changedom = () => { 
+            const t = document.getElementById('para1').innerHTML 
+            const cap = t.toUpperCase();
+                document.getElementById('para1').innerHTML = cap
+
+                document.getElementById('img1').width = '200'
+                document.getElementById('img1').height = '200'
+                
+                
+            const username  =  document.forms['f1']['username'].value ;
+
+            const Password = document.forms['f1']['password'].value;
+
+            console.log(username,Password)
+
+            document.querySelector('.para2').style.backgroundColor = 'red'
+
+            const p = document.createElement('p');
+            p.id = 'abc';
+            p.innerHTML = "this is paragraph after click"
+            document.body.appendChild(p)
+            }
+
+            const paraFun =(para) => {
+                if (para.id === 'pa1') {
+                alert('para1')
+                }
+            else {
+                alert('para2')
+            }
+
+            }
+        </script>
+</body>
+</html>
